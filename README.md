@@ -89,12 +89,37 @@ cd lightweight-patchcore
 pip install -e .
 ```
 
+
 ### Datasets
 
 - [MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad)
 - [VisA](https://github.com/amazon-science/spot-diff)
 
-VisA requires the one-class dataset layout expected by the repository's dataset loader. Dataset paths can be configured using `MVTEC_ROOT` and `VISA_ROOT`.
+**VisA Preprocessing**
+
+For our experiments, the VisA dataset was reorganized into a one-class directory structure similar to MVTec AD:
+
+```text
+visa_pytorch/1cls/
+└── <category>/
+    ├── train/
+    │   └── good/
+    ├── test/
+    │   ├── good/
+    │   └── bad/
+    └── ground_truth/
+        └── bad/
+```
+
+Images and corresponding ground-truth masks are processed using the following spatial transformations:
+
+1. Resize the shorter side to 256 pixels while preserving the aspect ratio.
+2. Apply a center crop to obtain a square 224 × 224 image.
+
+Input images are subsequently normalized using ImageNet mean and standard deviation.
+
+The VisA dataset loader expects the reorganized one-class directory structure. Dataset paths can be configured using the `MVTEC_ROOT` and `VISA_ROOT` environment variables.
+
 
 ### Run Experiments
 
