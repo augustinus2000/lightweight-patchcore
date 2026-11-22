@@ -1,0 +1,49 @@
+.idea/
+__pycache__/
+LabletAnomaly.egg-info/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# Datasets and experiment outputs
+data/
+logs/
+results/
+paper_results/
+*.log
+
+# Model checkpoints
+*.pth
+*.pt
+*.ckpt
+
+# Temporary files
+*.bak
+*.bak_*
+.DS_Store
+
+# Pretrained models and FAISS memory banks
+/models/
+*.faiss
+*.pkl
+
+# Additional experiment artifacts
+*.npy
+*.npz
+*.pth.tar
+
+# Journal extension: locally downloaded dataset archive
+/mvtec_anomaly_detection.tar.xz
+
+# Journal extension: generated experiment figures and tables
+/visa_001_comparison.png
+/experiments/**/*.csv
+/experiments/**/*.png
+
+# Local scratch and editor artifacts
+.ipynb_checkpoints/
+*.swp
+*.swo
