@@ -1,0 +1,47 @@
+.idea/
+__pycache__/
+LabletAnomaly.egg-info/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# Datasets and experiment outputs
+data/
+logs/
+results/
+paper_results/
+*.log
+
+# Model checkpoints
+*.pth
+*.pt
+*.ckpt
+
+# Temporary files
+*.bak
+*.bak_*
+.DS_Store
+
+# Pretrained models and FAISS memory banks
+/models/
+*.faiss
+*.pkl
+
+# Additional experiment artifacts
+*.npy
+*.npz
+*.pth.tar
+
+# Downloaded dataset archives and generated experiment outputs
+*.tar
+*.tar.xz
+/experiments/**/*.csv
+/experiments/**/*.png
+
+# Local scratch and editor artifacts
+.ipynb_checkpoints/
+*.swp
+*.swo
